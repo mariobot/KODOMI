@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Catalog.Api/1.0.0": {
         "dependencies": {
+          "Catalog.Domain": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -303,6 +304,14 @@
         },
         "compile": {
           "Catalog.Api.dll": {}
+        }
+      },
+      "Catalog.Domain/1.0.0": {
+        "runtime": {
+          "Catalog.Domain.dll": {}
+        },
+        "compile": {
+          "Catalog.Domain.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -1947,6 +1956,11 @@
   },
   "libraries": {
     "Catalog.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Catalog.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
