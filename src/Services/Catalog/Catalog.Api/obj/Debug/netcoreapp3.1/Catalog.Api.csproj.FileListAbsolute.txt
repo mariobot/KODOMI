@@ -62,3 +62,11 @@ C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcore
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Catalog.Persistence.Database.dll
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Catalog.Persistence.Database.pdb
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Catalog.Service.Queries.dll
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Service.Common.Collection.dll
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Service.Common.Mapping.dll
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Service.Common.Paging.dll
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Catalog.Service.Queries.pdb
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Service.Common.Collection.pdb
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Service.Common.Mapping.pdb
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Service.Common.Paging.pdb

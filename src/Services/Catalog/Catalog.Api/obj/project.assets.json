@@ -1519,6 +1519,55 @@
         "runtime": {
           "bin/placeholder/Catalog.Persistence.Database.dll": {}
         }
+      },
+      "Catalog.Service.Queries/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Catalog.Persistence.Database": "1.0.0",
+          "Service.Common.Mapping": "1.0.0",
+          "Service.Common.Paging": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Catalog.Service.Queries.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Catalog.Service.Queries.dll": {}
+        }
+      },
+      "Service.Common.Collection/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Service.Common.Collection.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Service.Common.Collection.dll": {}
+        }
+      },
+      "Service.Common.Mapping/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Service.Common.Mapping.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Service.Common.Mapping.dll": {}
+        }
+      },
+      "Service.Common.Paging/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.1",
+          "Service.Common.Collection": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Service.Common.Paging.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Service.Common.Paging.dll": {}
+        }
       }
     }
   },
@@ -5699,11 +5748,32 @@
       "type": "project",
       "path": "../Catalog.Persistence.Database/Catalog.Persistence.Database.csproj",
       "msbuildProject": "../Catalog.Persistence.Database/Catalog.Persistence.Database.csproj"
+    },
+    "Catalog.Service.Queries/1.0.0": {
+      "type": "project",
+      "path": "../Catalog.Service.Queries/Catalog.Service.Queries.csproj",
+      "msbuildProject": "../Catalog.Service.Queries/Catalog.Service.Queries.csproj"
+    },
+    "Service.Common.Collection/1.0.0": {
+      "type": "project",
+      "path": "../../Service.Common.Collection/Service.Common.Collection.csproj",
+      "msbuildProject": "../../Service.Common.Collection/Service.Common.Collection.csproj"
+    },
+    "Service.Common.Mapping/1.0.0": {
+      "type": "project",
+      "path": "../../Service.Common.Mapping/Service.Common.Mapping.csproj",
+      "msbuildProject": "../../Service.Common.Mapping/Service.Common.Mapping.csproj"
+    },
+    "Service.Common.Paging/1.0.0": {
+      "type": "project",
+      "path": "../../Service.Common.Paging/Service.Common.Paging.csproj",
+      "msbuildProject": "../../Service.Common.Paging/Service.Common.Paging.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Catalog.Persistence.Database >= 1.0.0",
+      "Catalog.Service.Queries >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.8"
     ]
   },
@@ -5740,6 +5810,9 @@
           "projectReferences": {
             "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Persistence.Database\\Catalog.Persistence.Database.csproj": {
               "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Persistence.Database\\Catalog.Persistence.Database.csproj"
+            },
+            "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Service.Queries\\Catalog.Service.Queries.csproj": {
+              "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Service.Queries\\Catalog.Service.Queries.csproj"
             }
           }
         }

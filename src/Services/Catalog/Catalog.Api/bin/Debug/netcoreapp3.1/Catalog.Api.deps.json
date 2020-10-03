@@ -25,6 +25,7 @@
       "Catalog.Api/1.0.0": {
         "dependencies": {
           "Catalog.Persistence.Database": "1.0.0",
+          "Catalog.Service.Queries": "1.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.8",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -1412,6 +1413,47 @@
         },
         "compile": {
           "Catalog.Persistence.Database.dll": {}
+        }
+      },
+      "Catalog.Service.Queries/1.0.0": {
+        "dependencies": {
+          "Catalog.Persistence.Database": "1.0.0",
+          "Service.Common.Mapping": "1.0.0",
+          "Service.Common.Paging": "1.0.0"
+        },
+        "runtime": {
+          "Catalog.Service.Queries.dll": {}
+        },
+        "compile": {
+          "Catalog.Service.Queries.dll": {}
+        }
+      },
+      "Service.Common.Collection/1.0.0": {
+        "runtime": {
+          "Service.Common.Collection.dll": {}
+        },
+        "compile": {
+          "Service.Common.Collection.dll": {}
+        }
+      },
+      "Service.Common.Mapping/1.0.0": {
+        "runtime": {
+          "Service.Common.Mapping.dll": {}
+        },
+        "compile": {
+          "Service.Common.Mapping.dll": {}
+        }
+      },
+      "Service.Common.Paging/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.8",
+          "Service.Common.Collection": "1.0.0"
+        },
+        "runtime": {
+          "Service.Common.Paging.dll": {}
+        },
+        "compile": {
+          "Service.Common.Paging.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3688,6 +3730,26 @@
       "sha512": ""
     },
     "Catalog.Persistence.Database/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Catalog.Service.Queries/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service.Common.Collection/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service.Common.Mapping/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service.Common.Paging/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
