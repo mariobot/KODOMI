@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Common.Logging;
 
 namespace Catalog.Api
 {
@@ -33,24 +34,34 @@ namespace Catalog.Api
             services.AddDbContext<ApplicationDbContext>(opts =>
                 opts.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"),
-                    x => x.MigrationsHistoryTable("__EFMigrationHistory", "Catalog")
+                    x => x.MigrationsHistoryTable("__EFMigrationHistory", "Catalog") // add migration to scheme catalog
                 )
             );
 
             // register all the depencies of EventHandlers
             services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers"));
 
-            services.AddTransient<IProductQueryService, ProductQueryService>();
+            services.AddTransient<IProductQueryService, ProductQueryService>();            
 
             services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                loggerFactory.AddSyslog(
+                    Configuration.GetValue<string>("Papertrail:host"),
+                    Configuration.GetValue<int>("Papertrail:port"));
+            }
+            else
+            {
+                loggerFactory.AddSyslog(
+                    Configuration.GetValue<string>("Papertrail:host"),
+                    Configuration.GetValue<int>("Papertrail:port"));
             }
 
             app.UseRouting();

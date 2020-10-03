@@ -4,6 +4,68 @@
     "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Api\\Catalog.Api.csproj": {}
   },
   "projects": {
+    "C:\\Desarrollo\\KODOTI.Commerce\\src\\Common\\Common.Logging\\Common.Logging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Common\\Common.Logging\\Common.Logging.csproj",
+        "projectName": "Common.Logging",
+        "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Common\\Common.Logging\\Common.Logging.csproj",
+        "packagesPath": "C:\\Users\\mbotero\\.nuget\\packages\\",
+        "outputPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Common\\Common.Logging\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mbotero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/1xXU4gzIuELiItCK6pu1YTSFQyjKZ47dySFDlac67g6A2dcjT2/api": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Api\\Catalog.Api.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,6 +93,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Desarrollo\\KODOTI.Commerce\\src\\Common\\Common.Logging\\Common.Logging.csproj": {
+                "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Common\\Common.Logging\\Common.Logging.csproj"
+              },
               "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Persistence.Database\\Catalog.Persistence.Database.csproj": {
                 "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Persistence.Database\\Catalog.Persistence.Database.csproj"
               },
@@ -63,6 +128,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.Extensions.Logging": {
               "target": "Package",
               "version": "[3.1.8, )"
             }

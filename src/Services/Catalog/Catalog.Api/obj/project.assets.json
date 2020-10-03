@@ -1582,6 +1582,19 @@
           "bin/placeholder/Catalog.Service.Queries.dll": {}
         }
       },
+      "Common.Logging/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.1"
+        },
+        "compile": {
+          "bin/placeholder/Common.Logging.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.Logging.dll": {}
+        }
+      },
       "Service.Common.Collection/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5842,6 +5855,11 @@
       "path": "../Catalog.Service.Queries/Catalog.Service.Queries.csproj",
       "msbuildProject": "../Catalog.Service.Queries/Catalog.Service.Queries.csproj"
     },
+    "Common.Logging/1.0.0": {
+      "type": "project",
+      "path": "../../../Common/Common.Logging/Common.Logging.csproj",
+      "msbuildProject": "../../../Common/Common.Logging/Common.Logging.csproj"
+    },
     "Service.Common.Collection/1.0.0": {
       "type": "project",
       "path": "../../Service.Common.Collection/Service.Common.Collection.csproj",
@@ -5863,9 +5881,11 @@
       "Catalog.Persistence.Database >= 1.0.0",
       "Catalog.Service.EventHandlers >= 1.0.0",
       "Catalog.Service.Queries >= 1.0.0",
+      "Common.Logging >= 1.0.0",
       "MediatR >= 8.1.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 8.1.0",
-      "Microsoft.EntityFrameworkCore.Tools >= 3.1.8"
+      "Microsoft.EntityFrameworkCore.Tools >= 3.1.8",
+      "Microsoft.Extensions.Logging >= 3.1.8"
     ]
   },
   "packageFolders": {
@@ -5899,6 +5919,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "C:\\Desarrollo\\KODOTI.Commerce\\src\\Common\\Common.Logging\\Common.Logging.csproj": {
+              "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Common\\Common.Logging\\Common.Logging.csproj"
+            },
             "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Persistence.Database\\Catalog.Persistence.Database.csproj": {
               "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Persistence.Database\\Catalog.Persistence.Database.csproj"
             },
@@ -5931,6 +5954,10 @@
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.1.8, )"
+          },
+          "Microsoft.Extensions.Logging": {
             "target": "Package",
             "version": "[3.1.8, )"
           }

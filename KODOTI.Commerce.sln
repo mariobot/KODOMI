@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Domain", "src\Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Persistence.Database", "src\Services\Catalog\Catalog.Persistence.Database\Catalog.Persistence.Database.csproj", "{4B493D73-0D05-4873-9D67-874690CDC711}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Service.Queries", "src\Services\Catalog\Catalog.Service.Queries\Catalog.Service.Queries.csproj", "{E8EF6516-C0AE-4A8C-AF62-19A25202AEF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Service.Queries", "src\Services\Catalog\Catalog.Service.Queries\Catalog.Service.Queries.csproj", "{E8EF6516-C0AE-4A8C-AF62-19A25202AEF0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{0A708651-3CF4-4AB1-9C06-F7792FC58FDF}"
 EndProject
@@ -46,6 +46,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Service.EventHandlers", "src\Services\Catalog\Catalog.Service.EventHandlers\Catalog.Service.EventHandlers.csproj", "{1A7BCBB6-67F7-4F05-82FE-1EFDFDEF4965}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Common", "src\Services\Catalog\Catalog.Common\Catalog.Common.csproj", "{871E32ED-288D-47E6-BEB7-ECC53FD04DE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Common", "04. Common", "{15C0E6E2-299E-4595-AFC0-7ED2E0A3F9C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Logging", "src\Common\Common.Logging\Common.Logging.csproj", "{DE0BA3DB-15DC-4343-9FD4-3085D30A5F92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,10 @@ Global
 		{871E32ED-288D-47E6-BEB7-ECC53FD04DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{871E32ED-288D-47E6-BEB7-ECC53FD04DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{871E32ED-288D-47E6-BEB7-ECC53FD04DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE0BA3DB-15DC-4343-9FD4-3085D30A5F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE0BA3DB-15DC-4343-9FD4-3085D30A5F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE0BA3DB-15DC-4343-9FD4-3085D30A5F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE0BA3DB-15DC-4343-9FD4-3085D30A5F92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +125,7 @@ Global
 		{00A45B9A-9429-4A20-840F-68086893428A} = {0A708651-3CF4-4AB1-9C06-F7792FC58FDF}
 		{1A7BCBB6-67F7-4F05-82FE-1EFDFDEF4965} = {F7A7CFE2-AFA8-4D7C-8123-7CD1878B36CD}
 		{871E32ED-288D-47E6-BEB7-ECC53FD04DE5} = {F7A7CFE2-AFA8-4D7C-8123-7CD1878B36CD}
+		{DE0BA3DB-15DC-4343-9FD4-3085D30A5F92} = {15C0E6E2-299E-4595-AFC0-7ED2E0A3F9C4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4487F2A-7B42-4A26-B81E-A94716E9D76F}
