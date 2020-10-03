@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Catalog.Persistence.Database;
 using Catalog.Service.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +36,9 @@ namespace Catalog.Api
                     x => x.MigrationsHistoryTable("__EFMigrationHistory", "Catalog")
                 )
             );
+
+            // register all the depencies of EventHandlers
+            services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers"));
 
             services.AddTransient<IProductQueryService, ProductQueryService>();
 

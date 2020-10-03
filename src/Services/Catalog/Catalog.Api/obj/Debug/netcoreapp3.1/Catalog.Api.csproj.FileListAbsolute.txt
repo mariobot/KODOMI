@@ -9,8 +9,6 @@ C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcore
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.csprojAssemblyReference.cache
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.AssemblyInfoInputs.cache
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.AssemblyInfo.cs
-C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.csproj.CoreCompileInputs.cache
-C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.RazorTargetAssemblyInfo.cache
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\staticwebassets\Catalog.Api.StaticWebAssets.Manifest.cache
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\staticwebassets\Catalog.Api.StaticWebAssets.xml
@@ -70,3 +68,11 @@ C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcore
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Service.Common.Collection.pdb
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Service.Common.Mapping.pdb
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Service.Common.Paging.pdb
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Catalog.Common.dll
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Catalog.Service.EventHandlers.dll
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Catalog.Service.EventHandlers.pdb
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Catalog.Common.pdb
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.csproj.CoreCompileInputs.cache
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.MvcApplicationPartsAssemblyInfo.cache

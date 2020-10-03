@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YOcJjwI40QjT2yFu+zwR9aGMBPIJRNRnaqOOr1r+jan/gOhurZCEvo6cyRxcDoKgTjhuTY29azyfrMU3Bv7PDg==",
+  "dgSpecHash": "0eEQ0XQCqECJHfyR5/sopY1fLJs3lzb4pZyhBQa3CKlkpj4dGvPQyCAcu2PCVNdmz+BcfUJOWmZeMH850bIvhg==",
   "success": true,
   "projectFilePath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Api\\Catalog.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mbotero\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
+    "C:\\Users\\mbotero\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.1.0\\mediatr.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\mbotero\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\mbotero\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\mbotero\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -8,6 +8,8 @@ using Service.Common.Collection;
 using Catalog.Service.Queries.DTOs;
 using Catalog.Service.Queries;
 using Microsoft.Extensions.Logging;
+using MediatR;
+using Catalog.Service.EventHandlers.Commands;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,13 +21,16 @@ namespace Catalog.Api.Controllers
     {
         private readonly IProductQueryService _productQueryService;
         private readonly ILogger<ProductController> _logger;
+        private readonly IMediator _mediator;
 
         public ProductController(
             ILogger<ProductController> logger,            
-            IProductQueryService productQueryService)
+            IProductQueryService productQueryService,
+            Mediator mediator)
         {
             _logger = logger;            
             _productQueryService = productQueryService;
+            _mediator = mediator;
         }
 
         [HttpGet]
@@ -46,5 +51,14 @@ namespace Catalog.Api.Controllers
         {
             return await _productQueryService.GetAsync(id);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> Create(ProductCreateCommand command) 
+        {
+            await _mediator.Publish(command);
+            return Ok();
+        }
+
+
     }
 }

@@ -2,6 +2,28 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "MediatR/8.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
+      "MediatR.Extensions.Microsoft.DependencyInjection/8.1.0": {
+        "type": "package",
+        "dependencies": {
+          "MediatR": "8.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -1496,6 +1518,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Catalog.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Catalog.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Catalog.Common.dll": {}
+        }
+      },
       "Catalog.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1518,6 +1550,21 @@
         },
         "runtime": {
           "bin/placeholder/Catalog.Persistence.Database.dll": {}
+        }
+      },
+      "Catalog.Service.EventHandlers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Catalog.Common": "1.0.0",
+          "Catalog.Persistence.Database": "1.0.0",
+          "MediatR": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Catalog.Service.EventHandlers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Catalog.Service.EventHandlers.dll": {}
         }
       },
       "Catalog.Service.Queries/1.0.0": {
@@ -1572,6 +1619,37 @@
     }
   },
   "libraries": {
+    "MediatR/8.1.0": {
+      "sha512": "KJFnA0MV83bNOhvYbjIX1iDykhwFXoQu0KV7E1SVbNA/CmO2I7SAm2Baly0eS7VJ2GwlmStLajBfeiNgTpvYzQ==",
+      "type": "package",
+      "path": "mediatr/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.dll",
+        "lib/net461/MediatR.xml",
+        "lib/netstandard2.0/MediatR.dll",
+        "lib/netstandard2.0/MediatR.xml",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.8.1.0.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
+    "MediatR.Extensions.Microsoft.DependencyInjection/8.1.0": {
+      "sha512": "kKJOHmdFKjd5hpk+RG1NXoGkZj9AYgXDCHui3Sx1OMIeBJEe0luG93JvOdLsghf7VQa2OX0Yi00sE39um4SMEw==",
+      "type": "package",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll",
+        "mediatr.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+        "mediatr.extensions.microsoft.dependencyinjection.nuspec"
+      ]
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "type": "package",
@@ -5739,6 +5817,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Catalog.Common/1.0.0": {
+      "type": "project",
+      "path": "../Catalog.Common/Catalog.Common.csproj",
+      "msbuildProject": "../Catalog.Common/Catalog.Common.csproj"
+    },
     "Catalog.Domain/1.0.0": {
       "type": "project",
       "path": "../Catalog.Domain/Catalog.Domain.csproj",
@@ -5748,6 +5831,11 @@
       "type": "project",
       "path": "../Catalog.Persistence.Database/Catalog.Persistence.Database.csproj",
       "msbuildProject": "../Catalog.Persistence.Database/Catalog.Persistence.Database.csproj"
+    },
+    "Catalog.Service.EventHandlers/1.0.0": {
+      "type": "project",
+      "path": "../Catalog.Service.EventHandlers/Catalog.Service.EventHandlers.csproj",
+      "msbuildProject": "../Catalog.Service.EventHandlers/Catalog.Service.EventHandlers.csproj"
     },
     "Catalog.Service.Queries/1.0.0": {
       "type": "project",
@@ -5773,7 +5861,10 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Catalog.Persistence.Database >= 1.0.0",
+      "Catalog.Service.EventHandlers >= 1.0.0",
       "Catalog.Service.Queries >= 1.0.0",
+      "MediatR >= 8.1.0",
+      "MediatR.Extensions.Microsoft.DependencyInjection >= 8.1.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.8"
     ]
   },
@@ -5811,6 +5902,9 @@
             "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Persistence.Database\\Catalog.Persistence.Database.csproj": {
               "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Persistence.Database\\Catalog.Persistence.Database.csproj"
             },
+            "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Service.EventHandlers\\Catalog.Service.EventHandlers.csproj": {
+              "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Service.EventHandlers\\Catalog.Service.EventHandlers.csproj"
+            },
             "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Service.Queries\\Catalog.Service.Queries.csproj": {
               "projectPath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Service.Queries\\Catalog.Service.Queries.csproj"
             }
@@ -5826,6 +5920,14 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "MediatR": {
+            "target": "Package",
+            "version": "[8.1.0, )"
+          },
+          "MediatR.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[8.1.0, )"
+          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
