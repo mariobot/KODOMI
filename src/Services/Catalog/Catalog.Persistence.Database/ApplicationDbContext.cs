@@ -10,10 +10,8 @@ namespace Catalog.Persistence.Database
     public class ApplicationDbContext: DbContext
     {
         public ApplicationDbContext(
-            DbContextOptions<ApplicationDbContext> options): base(options) {
-            
-        }
-        
+            DbContextOptions<ApplicationDbContext> options): base(options) {            
+        }        
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductinStock> Stocks { get; set; }
 
