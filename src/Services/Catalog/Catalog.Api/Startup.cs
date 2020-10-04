@@ -15,6 +15,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Common.Logging;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using HealthChecks.UI.Client;
 
 namespace Catalog.Api
 {
@@ -37,6 +40,12 @@ namespace Catalog.Api
                     x => x.MigrationsHistoryTable("__EFMigrationHistory", "Catalog") // add migration to scheme catalog
                 )
             );
+
+            services.AddHealthChecks()
+                .AddCheck("self", () => HealthCheckResult.Healthy())
+                .AddDbContextCheck<ApplicationDbContext>();
+            services.AddHealthChecksUI()
+                .AddInMemoryStorage();
 
             // register all the depencies of EventHandlers
             services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers"));
@@ -70,6 +79,16 @@ namespace Catalog.Api
 
             app.UseEndpoints(endpoints =>
             {
+                
+                endpoints.MapHealthChecks("hc", new HealthCheckOptions() { 
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
+                endpoints.MapHealthChecksUI(options =>
+                {
+                    options.UIPath = "/hc-ui";
+                    options.ApiPath = "/hc-ui-api";
+                });
                 endpoints.MapControllers();
             });
         }
