@@ -13,7 +13,7 @@ using Service.Common.Collection;
 namespace Customer.Api.Controllers
 {
     [ApiController]
-    [Route("v1/client")]
+    [Route("v1/clients")]
     public class ClientController : ControllerBase
     {
         private readonly ILogger<ClientController> _logger;
