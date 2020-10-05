@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Order.Persistence.Database;
+using Order.Service.Proxies.Catalog;
+using Order.Service.Queries;
 
 namespace Order.Api
 {
@@ -33,6 +37,18 @@ namespace Order.Api
                     x => x.MigrationsHistoryTable("__EFMigrationHistory", "Order") // add migration to scheme Order
                 )
             );
+
+            // configure the url api settings
+            services.Configure<ApiUrl>(ops =>
+                Configuration.GetSection("ApiUrl").Bind(ops)
+            );
+
+            // inject dependencies with httpclient
+            services.AddHttpClient<ICatalogProxy, CatalogProxy>();
+
+            services.AddTransient<IOrderQueryService,OrderQueryService>();
+
+            services.AddMediatR(Assembly.Load("Order.Service.EventHandlers"));
 
             services.AddControllers();
         }
