@@ -1,17 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Customer.Persistence.Database;
+using Customer.Service.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using System.Reflection;
 
 namespace Customer.Api
 {
@@ -33,6 +29,11 @@ namespace Customer.Api
                     x => x.MigrationsHistoryTable("__EFMigrationHistory", "Customer") // add migration to scheme Customer
                 )
             );
+
+            services.AddTransient<IClientQueryService, ClientQueryService>();
+            
+            // register all the depencies of EventHandlers
+            services.AddMediatR(Assembly.Load("Customer.Service.EventHandlers"));
 
             services.AddControllers();
         }

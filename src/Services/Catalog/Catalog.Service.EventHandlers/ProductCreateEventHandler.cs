@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Catalog.Service.EventHandlers
 {
-    public class ProductCreateEventHandler :
-        INotificationHandler<ProductCreateCommand>
+    public class ProductCreateEventHandler : INotificationHandler<ProductCreateCommand>
     {
         private readonly ApplicationDbContext _context;
 
