@@ -40,5 +40,23 @@ namespace Identity.Api.Controllers
                 return BadRequest("Void models");
             }
         }
+
+        [HttpPost("authentication")]
+        public async Task<IActionResult> Authentication(UserLoginCommand command)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _mediator.Send(command);
+
+                if (!result.Succeeded)
+                {
+                    return BadRequest("Access denied");
+                }
+
+                return Ok(result);
+            }
+
+            return BadRequest();
+        }
     }
 }
