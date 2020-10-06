@@ -47,6 +47,8 @@ namespace Order.Service.EventHandlers
                 // 03. Create order
                 _logger.LogInformation("--- Creating order");
                 await _context.AddAsync(entry);
+                foreach (var orderDetail in entry.Items)                
+                    await _context.AddAsync(orderDetail);                
                 await _context.SaveChangesAsync();
 
                 _logger.LogInformation($"--- Order {entry.OrderId} was created");

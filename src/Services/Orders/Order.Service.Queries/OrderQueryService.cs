@@ -36,7 +36,7 @@ namespace Order.Service.Queries
 
         public async Task<OrderDto> GetAsync(int id)
         {
-            return (await _context.Orders.SingleAsync(x => x.OrderId == id)).MapTo<OrderDto>();
+            return (await _context.Orders.Include(x => x.Items).SingleAsync(x => x.OrderId == id)).MapTo<OrderDto>();
         }
     }
 }
