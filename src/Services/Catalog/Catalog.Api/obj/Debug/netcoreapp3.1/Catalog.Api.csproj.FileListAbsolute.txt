@@ -117,5 +117,3 @@ C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcore
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\HealthChecks.UI.Client.dll
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\HealthChecks.UI.InMemory.Storage.dll
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
-C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.csproj.CoreCompileInputs.cache
-C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.MvcApplicationPartsAssemblyInfo.cache

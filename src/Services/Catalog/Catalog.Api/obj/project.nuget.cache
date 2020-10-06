@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xoYq9oT1J/BWhP8yr37StjUm7gUWHtolr1GDgzWgqt2YLff+fcUPoK2WMhUeekWcMXHSuxykgQdMYjU3ftiKjA==",
+  "dgSpecHash": "iBSBDqFgrF4E4fERUUXfg+JrGjc42KVI2k7KksQHNGUiV2P1/AVSgPEnr7JcZ5hoxiRKxeKMHXrikapUNkQZZg==",
   "success": true,
   "projectFilePath": "C:\\Desarrollo\\KODOTI.Commerce\\src\\Services\\Catalog\\Catalog.Api\\Catalog.Api.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\mbotero\\.nuget\\packages\\kubernetesclient\\2.0.29\\kubernetesclient.2.0.29.nupkg.sha512",
     "C:\\Users\\mbotero\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\mbotero\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.1.0\\mediatr.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\mbotero\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\mbotero\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.0.0\\microsoft.aspnetcore.jsonpatch.3.0.0.nupkg.sha512",
     "C:\\Users\\mbotero\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\mbotero\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

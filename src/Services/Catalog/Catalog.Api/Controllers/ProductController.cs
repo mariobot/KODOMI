@@ -10,11 +10,14 @@ using Catalog.Service.Queries;
 using Microsoft.Extensions.Logging;
 using MediatR;
 using Catalog.Service.EventHandlers.Commands;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Catalog.Api.Controllers
 {
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("v1/products")]
     [ApiController]
     public class ProductController : ControllerBase
