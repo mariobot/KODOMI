@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Identity.Domain;
 using Identity.Persistence.Database;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -52,6 +54,9 @@ namespace Identity.Api
                 options.Password.RequiredLength = 6;
                 options.Password.RequiredUniqueChars = 1;
             });
+
+            // register all the depencies of EventHandlers
+            services.AddMediatR(Assembly.Load("Identity.Service.EventHandlers"));
 
             services.AddControllers();
         }
