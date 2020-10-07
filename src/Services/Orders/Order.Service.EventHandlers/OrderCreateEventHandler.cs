@@ -36,19 +36,22 @@ namespace Order.Service.EventHandlers
 
             using (var trx = await _context.Database.BeginTransactionAsync()) 
             {
-                // 01. Prepare detail
-                _logger.LogInformation("--- Preparing detail");
-                PrepareDetail(entry, notification);
-
                 // 02. Prepare header
                 _logger.LogInformation("--- Preparing header");
                 PrepareHeader(entry, notification);
 
                 // 03. Create order
                 _logger.LogInformation("--- Creating order");
-                await _context.AddAsync(entry);
-                foreach (var orderDetail in entry.Items)                
-                    await _context.AddAsync(orderDetail);                
+                await _context.AddAsync(entry);                
+                await _context.SaveChangesAsync();
+
+                // Prepare detail
+                _logger.LogInformation("--- Preparing detail");
+                PrepareDetail(entry, notification);
+
+                // Create OrderDetails
+                foreach (var orderDetail in entry.Items)
+                    await _context.AddAsync(orderDetail);
                 await _context.SaveChangesAsync();
 
                 _logger.LogInformation($"--- Order {entry.OrderId} was created");
@@ -78,7 +81,8 @@ namespace Order.Service.EventHandlers
                 ProductId = x.ProductId,
                 Quantity = x.Quantity,
                 UnitPrice = x.Price,
-                Total = x.Price * x.Quantity
+                Total = x.Price * x.Quantity,
+                OrderId = entry.OrderId
             }).ToList();
         }
 

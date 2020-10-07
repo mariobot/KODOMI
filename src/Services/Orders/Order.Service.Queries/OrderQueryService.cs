@@ -36,7 +36,15 @@ namespace Order.Service.Queries
 
         public async Task<OrderDto> GetAsync(int id)
         {
-            return (await _context.Orders.SingleAsync(x => x.OrderId == id)).MapTo<OrderDto>();
+            Domain.Order result = (from c in _context.Orders
+                         where c.OrderId == id
+                         select c).FirstOrDefault();
+
+            result.Items = (from od in _context.OrdersDetails
+                            where od.OrderId == id
+                            select od).ToList();
+
+            return (result).MapTo<OrderDto>();
         }
     }
 }
