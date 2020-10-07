@@ -29,7 +29,7 @@ namespace Catalog.Api.Controllers
         public ProductController(
             ILogger<ProductController> logger,            
             IProductQueryService productQueryService,
-            Mediator mediator)
+            IMediator mediator)
         {
             _logger = logger;            
             _productQueryService = productQueryService;

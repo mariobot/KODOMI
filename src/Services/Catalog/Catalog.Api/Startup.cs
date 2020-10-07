@@ -49,8 +49,9 @@ namespace Catalog.Api
 
             // register all the depencies of EventHandlers
             services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers"));
-
-            services.AddTransient<IProductQueryService, ProductQueryService>();            
+            
+            services.AddTransient<IProductQueryService, ProductQueryService>();
+            services.AddTransient<IProductInStockQueryService, ProductInStockQueryService>();
 
             services.AddControllers();
         }

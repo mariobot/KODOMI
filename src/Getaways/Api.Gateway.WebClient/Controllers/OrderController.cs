@@ -76,11 +76,14 @@ namespace Api.Gateway.WebClient.Controllers
                 .GroupBy(g => g)
                 .Select(x => x.Key).ToList();
 
-            var products = await _catalogProxy.GetAllAsync(1, productIds.Count(), productIds);
-
-            foreach (var item in result.Items)
+            if (result.Items.Count() > 0)
             {
-                item.Product = products.Items.Single(x => x.ProductId == item.ProductId);
+                var products = await _catalogProxy.GetAllAsync(1, productIds.Count(), productIds);
+
+                foreach (var item in result.Items)
+                {
+                    item.Product = products.Items.Single(x => x.ProductId == item.ProductId);
+                }
             }
 
             return result;
