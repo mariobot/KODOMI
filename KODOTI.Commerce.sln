@@ -121,6 +121,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clients.Authentication", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clients.WebClient", "src\Client\Clients.WebClient\Clients.WebClient.csproj", "{934B0781-9DEA-4C28-ACF6-C76C173ABB7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients.WebClient.SPA", "src\Client\Clients.WebClient.SPA\Clients.WebClient.SPA.csproj", "{92AB1FEE-4962-4F99-8FE9-2C3315B8653E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -255,6 +257,10 @@ Global
 		{934B0781-9DEA-4C28-ACF6-C76C173ABB7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{934B0781-9DEA-4C28-ACF6-C76C173ABB7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{934B0781-9DEA-4C28-ACF6-C76C173ABB7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92AB1FEE-4962-4F99-8FE9-2C3315B8653E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92AB1FEE-4962-4F99-8FE9-2C3315B8653E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92AB1FEE-4962-4F99-8FE9-2C3315B8653E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92AB1FEE-4962-4F99-8FE9-2C3315B8653E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -315,6 +321,7 @@ Global
 		{6F9AD6D9-A128-4FC4-9D2B-071576BA13F1} = {F64F7A45-B72F-453E-B60F-D380428AC2C8}
 		{8A5753D2-8406-4595-9B25-4611E3B77F34} = {5DF77775-51BB-4683-AD6A-FE6C2756052A}
 		{934B0781-9DEA-4C28-ACF6-C76C173ABB7C} = {5DF77775-51BB-4683-AD6A-FE6C2756052A}
+		{92AB1FEE-4962-4F99-8FE9-2C3315B8653E} = {5DF77775-51BB-4683-AD6A-FE6C2756052A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4487F2A-7B42-4A26-B81E-A94716E9D76F}
