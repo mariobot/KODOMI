@@ -120,3 +120,4 @@ C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcore
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.csproj.CoreCompileInputs.cache
 C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\obj\Debug\netcoreapp3.1\Catalog.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Desarrollo\KODOTI.Commerce\src\Services\Catalog\Catalog.Api\bin\Debug\netcoreapp3.1\appsettings.production.json

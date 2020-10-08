@@ -40,11 +40,20 @@ namespace Order.Service.Queries
                          where c.OrderId == id
                          select c).FirstOrDefault();
 
-            result.Items = (from od in _context.OrdersDetails
-                            where od.OrderId == id
-                            select od).ToList();
+            OrderDto resultDto = (result).MapTo<OrderDto>();
 
-            return (result).MapTo<OrderDto>();
+            resultDto.Items = (from od in _context.OrdersDetails
+                            where od.OrderId == id
+                            select new OrderDetailDto(){ 
+                                OrderDetailId = od.OrderDetailId,
+                                OrderId = od.OrderId,
+                                ProductId = od.ProductId,
+                                Quantity = od.Quantity,
+                                Total = od.Total,
+                                UnitPrice = od.UnitPrice                                
+                            }).ToList();
+
+            return resultDto;
         }
     }
 }
