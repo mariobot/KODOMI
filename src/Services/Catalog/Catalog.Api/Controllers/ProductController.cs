@@ -1,17 +1,14 @@
-﻿using System;
+﻿using Catalog.Service.EventHandlers.Commands;
+using Catalog.Service.Queries;
+using Catalog.Service.Queries.DTOs;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Service.Common.Collection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Catalog.Domain;
-using Service.Common.Collection;
-using Catalog.Service.Queries.DTOs;
-using Catalog.Service.Queries;
-using Microsoft.Extensions.Logging;
-using MediatR;
-using Catalog.Service.EventHandlers.Commands;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

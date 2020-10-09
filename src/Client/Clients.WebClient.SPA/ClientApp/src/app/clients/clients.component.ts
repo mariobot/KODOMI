@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Clients } from '../models/clients';
+import { ClientsCollection } from '../models/ClientsCollection';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ClientsComponent implements OnInit {  
 
-  public clients: Object;
+  public clients: ClientsCollection;
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +23,7 @@ export class ClientsComponent implements OnInit {
     };
     //http://localhost:10000/clients?page=1&take=100'
     // check file proxy.conf.json
-    this.http.get<Object>('/clients?page=1&take=100').subscribe(result => (
+    this.http.get<ClientsCollection>('/clients?page=1&take=100').subscribe(result => (
       this.clients = result),
       error => console.log(error));
     console.log(this.clients);

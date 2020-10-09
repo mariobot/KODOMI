@@ -2,7 +2,7 @@
 
 <p *ngIf="!clients"><em>Cargando...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="clients">
   <thead>
     <tr>
       <th>Id</th>
@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let client of clients.Items">
+    <tr *ngFor="let client of clients.items">
       <td>{{ client.clientId }}</td>
       <td>{{ client.name }}</td>      
     </tr>
