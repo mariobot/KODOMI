@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Api.Gateway.WebClient.Controllers
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("products")]
     public class ProductController : ControllerBase

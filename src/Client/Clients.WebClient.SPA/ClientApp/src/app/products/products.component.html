@@ -1,0 +1,22 @@
+<p>List of Products!</p>
+
+<p *ngIf="!products"><em>Cargando...</em></p>
+
+<table class="table table-striped" *ngIf="products">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Description</td>
+      <td>Price</td>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products.items">
+      <td>{{product.productId}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.price}}</td>      
+    </tr>
+  </tbody>
+</table>

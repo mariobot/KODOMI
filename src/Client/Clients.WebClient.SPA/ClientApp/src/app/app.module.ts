@@ -9,6 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ClientsComponent } from './clients/clients.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ClientsComponent } from './clients/clients.component';
     NavMenuComponent,
     HomeComponent,    
     FetchDataComponent,
-    ClientsComponent
+    ClientsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,6 +28,7 @@ import { ClientsComponent } from './clients/clients.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },      
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'clients', component: ClientsComponent },
+      { path: 'products', component: ProductsComponent },
     ])
   ],
   providers: [],
