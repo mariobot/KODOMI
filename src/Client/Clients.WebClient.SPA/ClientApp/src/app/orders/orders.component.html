@@ -1,0 +1,22 @@
+<p *ngIf="!orders"><em>Cargando...</em></p>
+
+<table class="table table-striped" *ngIf="orders">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Number</td>
+      <td>Client</td>
+      <td>Created</td>
+      <td>Total</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders.items">
+      <td>{{order.orderId}}</td>
+      <td>{{order.orderNumber}}</td>
+      <td>{{order.clientId}}</td>
+      <td>{{order.createdAt}}</td>
+      <td>{{order.total}}</td>
+    </tr>
+  </tbody>
+</table>
