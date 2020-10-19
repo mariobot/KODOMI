@@ -58,9 +58,5 @@ namespace Catalog.Api.Controllers
             await _mediator.Publish(command);
             return Ok();
         }
-
-
-
-
     }
 }

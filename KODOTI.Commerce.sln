@@ -125,7 +125,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clients.WebClient.SPA", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Common", "05. Common", "{5141BB25-A9E4-4477-9908-0762EAEC68F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Gateway.Ocelot", "src\Getaways\Api.Gateway.Ocelot\Api.Gateway.Ocelot.csproj", "{E94957C2-9E95-4C02-ABDB-838A79A590F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Gateway.Ocelot", "src\Getaways\Api.Gateway.Ocelot\Api.Gateway.Ocelot.csproj", "{E94957C2-9E95-4C02-ABDB-838A79A590F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients.Blazor", "src\Client\Clients.Blazor\Clients.Blazor.csproj", "{B0C5A740-429A-49EA-898E-7B9376BB3445}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -269,6 +271,10 @@ Global
 		{E94957C2-9E95-4C02-ABDB-838A79A590F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E94957C2-9E95-4C02-ABDB-838A79A590F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E94957C2-9E95-4C02-ABDB-838A79A590F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C5A740-429A-49EA-898E-7B9376BB3445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C5A740-429A-49EA-898E-7B9376BB3445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C5A740-429A-49EA-898E-7B9376BB3445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C5A740-429A-49EA-898E-7B9376BB3445}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -332,6 +338,7 @@ Global
 		{92AB1FEE-4962-4F99-8FE9-2C3315B8653E} = {5DF77775-51BB-4683-AD6A-FE6C2756052A}
 		{5141BB25-A9E4-4477-9908-0762EAEC68F0} = {162A78AC-34D6-41D5-8BD2-F30F322438D3}
 		{E94957C2-9E95-4C02-ABDB-838A79A590F9} = {F64F7A45-B72F-453E-B60F-D380428AC2C8}
+		{B0C5A740-429A-49EA-898E-7B9376BB3445} = {5DF77775-51BB-4683-AD6A-FE6C2756052A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4487F2A-7B42-4A26-B81E-A94716E9D76F}
