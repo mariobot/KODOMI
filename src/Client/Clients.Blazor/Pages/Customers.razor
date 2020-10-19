@@ -1,0 +1,39 @@
+﻿@page "/customers"
+
+@using Clients.Blazor.Models;
+
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+<h3>Clients</h3>
+
+@if (clientlist != null)
+{
+    <table class="table table-info">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>            
+        </tr>
+        @foreach (var c in clientlist.Items)
+        {
+            <tr>
+                <td>@c.ClientId</td>
+                <td>@c.Name</td>                
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h3>Loading</h3>
+}
+
+@code {
+
+    private DataCollection<ClientDto> clientlist;
+
+    protected override async Task OnInitializedAsync()
+    {
+        clientlist = await this.Http.GetFromJsonAsync<DataCollection<ClientDto>>("clients?take=100&page=1");
+    }
+}

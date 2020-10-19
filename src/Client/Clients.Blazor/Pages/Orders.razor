@@ -1,0 +1,43 @@
+﻿@page "/orders"
+
+@using Clients.Blazor.Models;
+
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+<h3>Orders</h3>
+
+@if (orderlist != null)
+{
+    <table class="table table-info">
+        <tr>
+            <td>Order</td>
+            <td>Client</td>            
+            <td>Created</td>
+            <td>Total</td>
+        </tr>
+        @foreach (var o in orderlist.Items)
+        {
+            <tr>
+                <td>@o.OrderNumber</td>
+                <td>@o.Client.Name</td>                
+                <td>@o.CreatedAt</td>
+                <td>@o.Total.ToString("c")</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h3>Loading</h3>
+}
+
+@code {
+
+    private DataCollection<OrderDto> orderlist;
+
+    protected override async Task OnInitializedAsync()
+    {
+        orderlist = await this.Http.GetFromJsonAsync<DataCollection<OrderDto>>("orders?take=100&page=1");
+    }
+}
