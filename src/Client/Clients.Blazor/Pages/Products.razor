@@ -1,0 +1,18 @@
+﻿@page "/products"
+
+@using Clients.Blazor.Models;
+
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+<h3>Products</h3>
+
+@code {
+
+    private DataCollection<ProductDto> productslist;
+
+    protected override async Task OnInitializedAsync()
+    {
+        productslist = await this.Http.GetFromJsonAsync<DataCollection<ProductDto>>("products?take=100&page=1");        
+    }
+}
