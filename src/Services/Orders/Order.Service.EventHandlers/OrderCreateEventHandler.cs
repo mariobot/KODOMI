@@ -74,6 +74,18 @@ namespace Order.Service.EventHandlers
             _logger.LogInformation("--- New order creation ended");
         }
 
+        private void PrepareHeader(Domain.Order entry, OrderCreateCommand notification)
+        {
+            // Header information
+            entry.Status = Common.Enums.OrderStatus.Pending;
+            entry.PaymentType = notification.PaymentType;
+            entry.ClientId = notification.ClientId;
+            entry.CreatedAt = DateTime.UtcNow;
+
+            // Sum
+            entry.Total = notification.Items.Sum(x => x.Quantity * x.Price);
+        }
+
         private void PrepareDetail(Domain.Order entry, OrderCreateCommand notification) 
         {
             entry.Items = notification.Items.Select(x => new OrderDetail
@@ -84,18 +96,6 @@ namespace Order.Service.EventHandlers
                 Total = x.Price * x.Quantity,
                 OrderId = entry.OrderId
             }).ToList();
-        }
-
-        private void PrepareHeader(Domain.Order entry, OrderCreateCommand notification)
-        {
-            // Header information
-            entry.Status = Common.Enums.OrderStatus.Pending;
-            entry.PaymentType = notification.PaymentType;
-            entry.ClientId = notification.ClientId;
-            entry.CreatedAt = DateTime.UtcNow;
-
-            // Sum
-            entry.Total = entry.Items.Sum(x => x.Total);
-        }
+        }        
     }
 }
