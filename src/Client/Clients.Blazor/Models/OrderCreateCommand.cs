@@ -9,7 +9,7 @@ namespace Clients.Blazor.Models
     {
         public int PaymentType { get; set; }
         public int ClientId { get; set; }
-        public IEnumerable<OrderCreateDetail> Items { get; set; } = new List<OrderCreateDetail>();
+        public List<OrderCreateDetail> Items { get; set; } = new List<OrderCreateDetail>();
     }
 
     public class OrderCreateDetail
