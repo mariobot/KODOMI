@@ -127,7 +127,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Common", "05. Common", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Gateway.Ocelot", "src\Getaways\Api.Gateway.Ocelot\Api.Gateway.Ocelot.csproj", "{E94957C2-9E95-4C02-ABDB-838A79A590F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients.Blazor", "src\Client\Clients.Blazor\Clients.Blazor.csproj", "{B0C5A740-429A-49EA-898E-7B9376BB3445}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clients.Blazor", "src\Client\Clients.Blazor\Clients.Blazor.csproj", "{B0C5A740-429A-49EA-898E-7B9376BB3445}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

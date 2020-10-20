@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Blazored.Modal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +28,7 @@ namespace Clients.Blazor
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddBlazoredModal();
 
             services.AddScoped(sp =>
             new HttpClient

@@ -1,0 +1,59 @@
+﻿@page "/orderdetail/{id:int}"
+
+@inject HttpClient Http
+@if (order != null)
+{
+    <div class="simple-form">
+
+        <div class="form-group">
+            <label for="movie-name">Order Number</label>
+            <label for="movie-name">@order.OrderNumber</label>
+        </div>
+
+        <div class="form-group">
+            <label for="client">Client</label>
+            <label id="client">@order.ClientId</label>
+        </div>
+
+        <div class="form-group">
+            <label for="client">Products</label>
+            <ul>
+                @if (order.Items != null)
+                {
+                    @foreach (var item in order.Items)
+                    {
+                        <li>@item.ProductId -- @item.Product.Name -- @item.UnitPrice.ToString("c") -- @item.Quantity -- @item.Total.ToString("c")</li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="form-group">
+            <label for="client">Total</label>
+            <label id="client">@order.Total</label>
+        </div>
+        <div class="form-group">
+            <label for="client">Created</label>
+            <label id="client">@order.CreatedAt</label>
+        </div>
+        @*<button @onclick="BlazoredModal.Cancel" class="btn btn-secondary">Cancel</button>*@
+    </div>
+}
+else { 
+    <h3>Loading</h3>
+}
+
+
+@code {
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; }
+
+    [Parameter]
+    public int Id { get; set; }
+
+    private OrderDto order;
+
+    protected override async Task OnInitializedAsync()
+    {
+        order = await this.Http.GetFromJsonAsync<OrderDto>("orders/" + Id.ToString());
+    }
+}

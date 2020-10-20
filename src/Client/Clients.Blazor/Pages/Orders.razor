@@ -3,7 +3,9 @@
 @using Clients.Blazor.Models;
 
 @using System.Net.Http.Json
+
 @inject HttpClient Http
+@inject IModalService modal
 
 <h3>Orders</h3>
 
@@ -12,15 +14,22 @@
     <table class="table table-info">
         <tr>
             <td>Order</td>
-            <td>Client</td>            
+            <td>Client</td>
             <td>Created</td>
             <td>Total</td>
         </tr>
         @foreach (var o in orderlist.Items)
         {
             <tr>
-                <td>@o.OrderNumber</td>
-                <td>@o.Client.Name</td>                
+                <td>
+                    <button type="button" @onclick="@(() => ShowOrder(o.OrderId))">
+                        @o.OrderNumber
+                    </button>
+                    <NavLink href="@($"orderdetail/{o.OrderId}")" >
+                        @o.OrderNumber
+                    </NavLink>
+                </td>
+                <td>@o.Client.Name</td>
                 <td>@o.CreatedAt</td>
                 <td>@o.Total.ToString("c")</td>
             </tr>
@@ -34,10 +43,20 @@ else
 
 @code {
 
+    [CascadingParameter] public IModalService Modal { get; set; }
+
     private DataCollection<OrderDto> orderlist;
 
     protected override async Task OnInitializedAsync()
     {
         orderlist = await this.Http.GetFromJsonAsync<DataCollection<OrderDto>>("orders?take=100&page=1");
+    }
+
+    private void ShowOrder(int id)
+    {
+        var parameters = new ModalParameters();
+        parameters.Add("id", id);
+
+        Modal.Show<OrderDetail>("Order Detail", parameters);
     }
 }
