@@ -60,7 +60,7 @@
                 <li>Id -- Quantity -- Price</li>
                 @foreach (var p in model.Items)
                 {
-                    <li>@p.ProductId --   @p.Quantity  --  @p.Price -- </li>
+                    <li>@p.ProductId --   @p.Quantity  --  @p.Price -- <button @onclick="@(()=>DelLine(p.ProductId))">Delete</button></li>
                 }
             }
         </ul>
@@ -96,7 +96,7 @@
     {
         model.ClientId = Convert.ToInt32(e.Value.ToString());
     }
-    
+
     private void HandleAddProduct()
     {
         var product = productslist.Items.FirstOrDefault(x => x.ProductId == selectedproduct);
@@ -120,5 +120,11 @@
             await this.Http.PostAsJsonAsync<OrderCreateCommand>("orders", model);
             message = "Order maked visit the order page";
         }
+    }
+
+    void DelLine(int ProductId)
+    {
+        var product = model.Items.FirstOrDefault(x => x.ProductId == ProductId);
+        model.Items.Remove(product);
     }
 }
