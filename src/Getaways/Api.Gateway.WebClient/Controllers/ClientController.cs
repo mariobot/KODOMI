@@ -1,4 +1,5 @@
 ﻿using Api.Gateway.Models;
+using Api.Gateway.Models.Customer.Commands;
 using Api.Gateway.Models.Customer.DTOs;
 using Api.Gateway.Proxies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -15,9 +16,7 @@ namespace Api.Gateway.WebClient.Controllers
     {
         private readonly ICustomerProxy _customerProxy;
 
-        public ClientController(
-            ICustomerProxy customerProxy
-        ) 
+        public ClientController(ICustomerProxy customerProxy) 
         {
             _customerProxy = customerProxy;
         }
@@ -32,6 +31,20 @@ namespace Api.Gateway.WebClient.Controllers
         public async Task<ClientDto> Get(int id)
         {
             return await _customerProxy.GetAsync(id);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Create(ClientCreateCommand command)
+        {
+            await _customerProxy.CreateClient(command);
+            return Ok();
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Update(ClientUpdateCommand command)
+        {
+            await _customerProxy.UpdateClient(command);
+            return Ok();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Api.Gateway.Models;
+using Api.Gateway.Models.Customer.Commands;
 using Api.Gateway.Models.Customer.DTOs;
 using Api.Gateway.Proxies.Config;
 using Api.Gateway.Proxy;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -15,6 +17,8 @@ namespace Api.Gateway.Proxies
     {
         Task<DataCollection<ClientDto>> GetAllAsync(int page, int take, IEnumerable<int> clients = null);
         Task<ClientDto> GetAsync(int id);
+        Task CreateClient(ClientCreateCommand command);
+        Task UpdateClient(ClientUpdateCommand command);
     }
 
     public class CustomerProxy : ICustomerProxy
@@ -61,6 +65,30 @@ namespace Api.Gateway.Proxies
                     PropertyNameCaseInsensitive = true
                 }
             );
+        }
+
+        public async Task CreateClient(ClientCreateCommand command)
+        {
+            var content = new StringContent(
+                JsonSerializer.Serialize(command),
+                Encoding.UTF8,
+                "application/json"
+            );
+
+            var request = await _httpClient.PostAsync($"{_apiUrls.CustomerUrl}v1/clients", content);
+            request.EnsureSuccessStatusCode();
+        }
+
+        public async Task UpdateClient(ClientUpdateCommand command)
+        {
+            var content = new StringContent(
+                JsonSerializer.Serialize(command),
+                Encoding.UTF8,
+                "application/json"
+            );
+
+            var request = await _httpClient.PutAsync($"{_apiUrls.CustomerUrl}v1/clients", content);
+            request.EnsureSuccessStatusCode();
         }
     }
 }
