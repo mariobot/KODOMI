@@ -1,6 +1,7 @@
 ﻿using Customer.Persistence.Database;
 using Customer.Service.EventHandlers.Commands;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,10 @@ namespace Customer.Service.EventHandlers
 
         public async Task Handle(ClientUpdateCommand command, CancellationToken token)
         {
-            var client = applicationDbContext.Clients.FirstOrDefault(x => x.ClientId == command.IdClient);
+            var client = applicationDbContext.Clients.FirstOrDefault(x => x.ClientId == command.ClientId);
             client.Name = command.Name;
-            applicationDbContext.Update(client);
+            applicationDbContext.Entry(client).State = EntityState.Modified;
+            applicationDbContext.SaveChanges();
             await applicationDbContext.SaveChangesAsync();
         }
     }

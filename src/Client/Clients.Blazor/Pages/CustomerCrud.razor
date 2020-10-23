@@ -1,0 +1,20 @@
+﻿<EditForm Model="@client" OnValidSubmit="@OnValidSubmit">
+    <div class="form-field">
+        <label>Name</label>
+        <div>
+            <input @bind-value="@client.Name" />
+            <ValidationMessage For="@(() => client.Name)"></ValidationMessage>
+        </div>
+        <button type="submit" class="btn btn-success">@mensaje</button>
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public ClientDto client { get; set; } = new ClientDto();
+    [Parameter]
+    public string mensaje { get; set; } = "Create Customer";
+    [Parameter]
+    public EventCallback OnValidSubmit { get; set; }
+}

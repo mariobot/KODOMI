@@ -1,0 +1,33 @@
+﻿@page "/editcustomer/{ClientId:int}"
+
+@using Clients.Blazor.Models;
+
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+<h3>Update Clients</h3>
+
+<CustomerCrud client="@customer" mensaje="Edit Customer" OnValidSubmit="UpdateClient"></CustomerCrud>
+
+@mesagge
+
+@code {
+    [Parameter]
+    public int ClientId { get; set; }
+
+    private ClientDto customer { get; set; } = new ClientDto();
+
+    private string mesagge { get; set; } = "";
+
+    protected override async Task OnParametersSetAsync()
+    {
+        customer = await Http.GetFromJsonAsync<ClientDto>($"clients/{ClientId}");
+    }
+
+    async Task UpdateClient()
+    {
+        //customer.ClientId = ClientId;
+        await Http.PutAsJsonAsync<ClientDto>("clients",customer);
+        mesagge = "Customer Updated";
+    }
+}

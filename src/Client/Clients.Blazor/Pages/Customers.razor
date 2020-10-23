@@ -7,18 +7,28 @@
 
 <h3>Clients</h3>
 
+<CustomerCrud client="@customer" OnValidSubmit="CreateClient"></CustomerCrud>
+
 @if (clientlist != null)
 {
     <table class="table table-info">
         <tr>
+            <td>Edit</td>
+            <td>Delete</td>
             <td>Id</td>
-            <td>Name</td>            
+            <td>Name</td>
         </tr>
         @foreach (var c in clientlist.Items)
         {
             <tr>
+                <td>
+                    <a class="btn btn-success" href="/editcustomer/@c.ClientId"> Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="/editcustomer/@c.ClientId"> Delete</a>
+                </td>
                 <td>@c.ClientId</td>
-                <td>@c.Name</td>                
+                <td>@c.Name</td>
             </tr>
         }
     </table>
@@ -32,8 +42,16 @@ else
 
     private DataCollection<ClientDto> clientlist;
 
+    private ClientDto customer = new ClientDto();
+
     protected override async Task OnInitializedAsync()
     {
         clientlist = await this.Http.GetFromJsonAsync<DataCollection<ClientDto>>("clients?take=100&page=1");
+    }
+
+    private async Task CreateClient()
+    {
+        await this.Http.PostAsJsonAsync<ClientDto>("clients", customer);
+        clientlist = await this.Http.GetFromJsonAsync<DataCollection<ClientDto>>("clients?take=150&page=1");        
     }
 }

@@ -7,7 +7,7 @@ namespace Customer.Service.EventHandlers.Commands
 {
     public class ClientUpdateCommand : INotification
     {
-        public int IdClient { get; set; }
+        public int ClientId { get; set; }
         public string Name { get; set; }
     }
 }

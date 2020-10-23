@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazored.Modal" Version="5.1.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
     <PackageReference Include="System.Net.Http.Json" Version="3.2.1" />
   </ItemGroup>
 
